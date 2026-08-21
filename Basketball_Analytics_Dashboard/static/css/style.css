@@ -1,0 +1,376 @@
+/* ==========================================================
+   Basketball Analytics Dashboard - style.css
+   Theme: Dark Navy / Black / Purple / Orange
+   ========================================================== */
+
+:root {
+  --card-color: #111827;
+  --sidebar-color: #0f172a;
+  --orange: #ff7a00;
+  --purple: #6d5dfc;
+  --text-light: #e5e7eb;
+  --text-muted: #94a3b8;
+  --radius: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: var(--text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---------------- BACKGROUND ---------------- */
+.bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: -1;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: var(--sidebar-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 18px;
+  z-index: 1000;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 40px;
+  padding-left: 6px;
+}
+
+.sidebar-brand i {
+  color: var(--orange);
+  font-size: 1.5rem;
+}
+
+.sidebar-brand strong {
+  color: var(--purple);
+}
+
+.sidebar-menu {
+  list-style: none;
+  flex: 1;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-menu li a i {
+  font-size: 1.05rem;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+  background: linear-gradient(90deg, rgba(255, 122, 0, 0.15), rgba(109, 93, 252, 0.15));
+  color: #fff;
+}
+
+.sidebar-menu li a.active {
+  border-left: 3px solid var(--orange);
+}
+
+.sidebar-footer {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-toggle {
+  background: var(--card-color);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+/* ---------------- MAIN CONTENT ---------------- */
+.main-content {
+  margin-left: 250px;
+  padding: 28px 32px 48px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ---------------- TOP HEADER ---------------- */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  padding-bottom: 8px;
+}
+
+.top-header h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.top-header p {
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* ---------------- KPI CARDS ---------------- */
+.kpi-card {
+  background-color: var(--card-color);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 122, 0, 0.3);
+}
+
+.kpi-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.kpi-icon.orange {
+  background: linear-gradient(135deg, var(--orange), #ff9d45);
+}
+
+.kpi-icon.purple {
+  background: linear-gradient(135deg, var(--purple), #9b8dff);
+}
+
+.kpi-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.kpi-info p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.kpi-section {
+  margin-bottom: 28px;
+}
+
+/* ---------------- CHARTS ---------------- */
+.charts-section {
+  margin-bottom: 28px;
+}
+
+.chart-card {
+  background-color: var(--card-color);
+  border-radius: var(--radius);
+  padding: 22px;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chart-card h5 {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.chart-card canvas {
+  max-height: 320px;
+}
+
+/* ---------------- TABLE ---------------- */
+.table-section {
+  margin-bottom: 28px;
+}
+
+.table-card {
+  background-color: var(--card-color);
+  border-radius: var(--radius);
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table-card-compact {
+  max-width: 720px;
+}
+
+.table-card h5 {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.table-subtitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+.table-card table {
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
+.table-card thead th {
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: transparent;
+}
+
+.table-card tbody td {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: transparent;
+}
+
+.table-card tbody tr:hover td {
+  background-color: rgba(109, 93, 252, 0.08);
+}
+
+.position-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.position-badge.Guard { background: rgba(255, 122, 0, 0.15); color: var(--orange); }
+.position-badge.Forward { background: rgba(109, 93, 252, 0.15); color: var(--purple); }
+.position-badge.Center { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+.position-badge.Other { background: rgba(148, 163, 184, 0.15); color: var(--text-muted); }
+
+/* ---------------- ABOUT / MATCHES ---------------- */
+.about-card {
+  background-color: var(--card-color);
+  border-radius: var(--radius);
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.about-card h5 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-card h5 i {
+  color: var(--orange);
+}
+
+.about-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 991.98px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 20px 18px 40px;
+  }
+
+  .top-header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .kpi-info h3 {
+    font-size: 1.2rem;
+  }
+}

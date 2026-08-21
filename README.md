@@ -61,7 +61,7 @@ All data comes from the database - no hardcoded values.
    ```bash
    python app.py
    ```
-3. Open your browser and go to `http://127.0.0.1:5000/`
+
 
 ## API Endpoints
 
